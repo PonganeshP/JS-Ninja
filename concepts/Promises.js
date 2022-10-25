@@ -28,10 +28,10 @@ console.log(burgerMenu);
 
 //server
 let api = {
-  createOrder: function (cb1) {
+  createOrder: function (cart) {
     console.log("Creating the Order");
     let myPromise = new Promise(function (myResolve, myReject) {
-      myResolve(); // when successful
+      myResolve(cart.length); // when successful
       myReject(); // when error
     });
     return myPromise;
@@ -57,11 +57,14 @@ let api = {
   },
 };
 
-const p1 = api.createOrder();
+var cart = ["pant", "shirt", "earphones"];
+
+const p1 = api.createOrder(cart);
 p1.then(() => api.paymentSection())
   .then(() => api.orderSummary())
   .then(() => api.walletUpdate());
 
+console.log(p1);
 /*
       here we prevented Pyramid of Doom/ Callback hell
 */
