@@ -9,12 +9,13 @@
 console.log("From Temporaldeadzone js");
 
 function print() {
+  console.log(age);
   function log() {
     console.log(age);
   }
   log();
 }
-const age = 20;
+let age;
 
 print();
 
