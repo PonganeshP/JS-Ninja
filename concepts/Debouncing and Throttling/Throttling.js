@@ -19,9 +19,12 @@ let getData = () => {
 
 let throttle = (fn, delay) => {
   let flag = false;
+  let context = this;
+  let args = [0, 1];
   return function () {
     if (!flag) {
-      fn();
+      // fn();
+      fn.apply(context, args); // for getting values in this object use apply method instead of direct calling
       flag = true; // till the timer delay gets executed(400ms) flag will be set and will not enter getData function call
       setTimeout(() => {
         flag = false;
