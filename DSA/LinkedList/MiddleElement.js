@@ -31,6 +31,9 @@ const prblmStatement = {
   //param A : head node of linked list
   //return an integer
   solve: function (A) {
+    /*
+    Brute Force:
+
     let count = 0;
     if (A.next == null) {
       return A.head;
@@ -55,6 +58,22 @@ const prblmStatement = {
       }
       temp = temp.next;
     }
+    
+    */
+
+    // Find in single iteration using slow and fast pointer
+
+    let slow = A;
+    let fast = A;
+    while (fast.next != null) {
+      if (fast.next.next == null) {
+        slow = slow.next;
+        break;
+      }
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    return slow.next.data;
   },
 };
 
