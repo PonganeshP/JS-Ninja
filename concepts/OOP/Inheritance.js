@@ -16,7 +16,7 @@
     x.__proto__
 
     Prototype is just a regular object
-    in simple terms Prototype is just a base/ parent class
+    in simple terms Prototype is just a base/ parent class.
 
 */
 

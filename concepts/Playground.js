@@ -1,5 +1,6 @@
-function run() {
+function summa() {
+  let a;
   console.log(a);
-  let a = 1;
 }
-run();
+let a = 10;
+summa();
